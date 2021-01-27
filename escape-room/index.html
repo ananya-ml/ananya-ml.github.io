@@ -1,38 +1,5 @@
 <!DOCTYPE html>
-<!--
-  
 
-  You should have received a copy of the GNU Affero General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-<!-- 
-    Cloth simulation algorithm based on:
-    - Mosegaard's Cloth Simulation Coding Tutorial (CPU implementation) 
-        https://viscomp.alexandra.dk/?p=147
-    - Cloth Simulation on the GPU by Cyril Zeller
-        http://http.download.nvidia.com/developer/presentations/2005/SIGGRAPH/ClothSimulationOnTheGPU.pdf
- 
-    States of Exception drawing
-    - From States of Exception by Sahar Kubba
-        http://atelierjamad.ca/
-
-    Wind sound
-     - Vent - wind (1) by Glaneur de sons
-        https://freesound.org/people/Glaneur%20de%20sons/sounds/104952/
-
-    Pixel spirit Shaders:
-    - Pixel Spirit Deck by Patricio Gonzalez Vivo
-        https://patriciogonzalezvivo.github.io/PixelSpiritDeck/
-
-    Quotes from:
-    - The Letters of the Dead by Wislawa Szymborska
-    - Eichmann in Jerusalem by Hannah Arendt
-    - Invisible Cities by Italo Calvino
-    - Ash-shar by Iman Mersal
-    - Love by Matthew Dickman
-    - Vivre Sa Vie by Jean-Luc Godard
-    - My sight, which was my power... by Arseny Tarkovsky
- -->
 <html>
 <head>
     <title>A Theatre at the End</title>
@@ -101,8 +68,50 @@
         A Theatre at the End
         <div id="click-to-start">
           Click to take your seat
+          <style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
           <form action="https://user-images.githubusercontent.com/74660593/105993735-bf0fa300-60cc-11eb-8676-1b9360563eec.jpg">
             <input type="submit" value="" />
+            <button class="button" style="vertical-align:middle"><span>Click to take your seat</span></button>
           </form>
         </div>
               <div id="click-to-start">
