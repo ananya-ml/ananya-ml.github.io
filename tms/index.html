@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny Mic Story</title>
+  <style>
+    /* Style to make sure iframe covers full viewport */
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="wix-site" src="https://excalibur2006.wixsite.com/my-site"></iframe>
+
+  <script>
+    // Function to resize and remove the top banner
+    function adjustIframe() {
+      const iframe = document.getElementById('wix-site');
+      iframe.onload = function () {
+        // Use postMessage to communicate with the iframe (if same-origin policy is not an issue)
+        iframe.contentWindow.postMessage(
+          { action: 'hideTopBanner' },
+          '*'
+        );
+      };
+    }
+
+    // Load the iframe adjustment
+    adjustIframe();
+  </script>
+</body>
+</html>
